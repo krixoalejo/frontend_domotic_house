@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Casa Domótica
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>  
+    <ion-list-header>
+      <ion-icon name="sunny"></ion-icon>
+      Luces
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <!-- Luz del primer piso -->
+          <button [disabled]="sensorMovimiento" ion-button icon-left color="light" (click)="cambiarLuzPiso1()">
+            <ion-icon *ngIf="!luzPiso1" name="sunny" color="danger"></ion-icon>
+            <ion-icon *ngIf="luzPiso1" name="sunny" color="secondary"></ion-icon>
+            Luz 1er piso
+          </button>
+        </ion-col>
+
+        <ion-col col-6>
+          <!-- Sensor movimiento de la luz del primer piso -->
+          <button ion-button icon-left color="light" (click)="cambiarSensorMovimiento()">
+            <ion-icon *ngIf="!sensorMovimiento" name="square" color="danger"></ion-icon>
+            <ion-icon *ngIf="sensorMovimiento" name="checkbox" color="secondary"></ion-icon>
+            ¿Sensor activo?
+          </button>
+          <!-- <ion-item>
+            <ion-label>¿Sensor activo?</ion-label>
+            <ion-checkbox [(ngModel)]="sensorActivo" color="dark" checked="sensorActivo" (click)="cambiarSensorActivo()"></ion-checkbox>
+          </ion-item> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <!-- Luz del segundo piso -->
+          <button ion-button icon-left color="light" (click)="cambiarLuzPiso2()">
+            <ion-icon *ngIf="!luzPiso2" name="sunny" color="danger"></ion-icon>
+            <ion-icon *ngIf="luzPiso2" name="sunny" color="secondary"></ion-icon>
+            Luz 2do piso
+          </button>
+        </ion-col>
+    
+        <ion-col col-6>
+          <!-- Luz del tercer piso -->
+          <button ion-button icon-left color="light" (click)="cambiarLuzPiso3()">
+            <ion-icon *ngIf="!luzPiso3" name="sunny" color="danger"></ion-icon>
+            <ion-icon *ngIf="luzPiso3" name="sunny" color="secondary"></ion-icon>
+            Luz 3er piso
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <!-- Luz del cuarto piso -->
+          <button ion-button icon-left color="light" (click)="cambiarLuzPiso4()">
+            <ion-icon *ngIf="!luzPiso4" name="sunny" color="danger"></ion-icon>
+            <ion-icon *ngIf="luzPiso4" name="sunny" color="secondary"></ion-icon>
+            Luz 4to piso
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="browsers"></ion-icon>
+      Persianas
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <!-- Persiana 1 -->
+          <button ion-button icon-left color="light" (click)="cambiarPersiana1()">
+            <ion-icon *ngIf="!persiana1" name="browsers" color="danger"></ion-icon>
+            <ion-icon *ngIf="persiana1" name="browsers" color="secondary"></ion-icon>
+            Persiana izquierda
+          </button>
+        </ion-col>
+
+        <ion-col col-6>
+          <!-- Persiana 2 -->
+          <button ion-button icon-left color="light" (click)="cambiarPersiana2()">
+            <ion-icon *ngIf="!persiana2" name="browsers" color="danger"></ion-icon>
+            <ion-icon *ngIf="persiana2" name="browsers" color="secondary"></ion-icon>
+            Persiana derecha
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="square"></ion-icon>
+       Puertas
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <!-- Puerta principal -->
+          <button ion-button icon-left color="light" (click)="cambiarPuertaPrincipal()">
+            <ion-icon *ngIf="!puertaPrincipal" name="square" color="danger"></ion-icon>
+            <ion-icon *ngIf="puertaPrincipal" name="square" color="secondary"></ion-icon>
+            Puerta garaje
+          </button>
+        </ion-col>
+  
+        <ion-col col-6>
+          <!-- Puerta garaje -->
+          <button ion-button icon-left color="light" (click)="cambiarPuertaGaraje()">
+            <ion-icon *ngIf="!puertaGaraje" name="square" color="danger"></ion-icon>
+            <ion-icon *ngIf="puertaGaraje" name="square" color="secondary"></ion-icon>
+            Puerta principal
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="cog"></ion-icon>
+      Sensores
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <!-- Sensor temperatura -->
+          <button ion-button icon-left color="light" (click)="cambiarSensorTemperatura()">
+            <ion-icon name="thermometer" color="danger"></ion-icon>
+            Temperatura
+          </button>
+        </ion-col>
+  
+        <ion-col col-6>
+          <!-- Sensor gas -->
+          <!-- <button ion-button icon-left color="light" (click)="cambiarSensorGas()">
+            <ion-icon *ngIf="!sensorGas" name="flame" color="danger"></ion-icon>
+            <ion-icon *ngIf="sensorGas" name="flame" color="secondary"></ion-icon>
+            Gas/Humo
+          </button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+</ion-content>
